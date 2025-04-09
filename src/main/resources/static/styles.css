@@ -1,0 +1,169 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #555;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+button, input {
+    border-radius: .5em;
+}
+
+input {
+    border: none;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: 1px;
+}
+
+input:hover {
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+header {
+    padding: .8em;
+    background-color: #2E8B57;
+    background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill="%233CB371" fill-opacity="0.2" d="M10 0L12.5 5H7.5L10 0zM10 20L12.5 15H7.5L10 20zM0 10L5 12.5V7.5L0 10zM20 10L15 12.5V7.5L20 10zM3.5 3.5L7 7L3.5 10.5L0 7L3.5 3.5zM16.5 3.5L20 7L16.5 10.5L13 7L16.5 3.5zM3.5 16.5L7 20L3.5 16.5L0 13L3.5 16.5zM16.5 16.5L20 20L16.5 16.5L13 13L16.5 16.5z"%3E%3C/path%3E%3C/svg%3E');
+    color: white;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+header input {
+    width: 10em;
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #2E8B57;
+    background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill="%233CB371" fill-opacity="0.2" d="M10 0L12.5 5H7.5L10 0zM10 20L12.5 15H7.5L10 20zM0 10L5 12.5V7.5L0 10zM20 10L15 12.5V7.5L20 10zM3.5 3.5L7 7L3.5 10.5L0 7L3.5 3.5zM16.5 3.5L20 7L16.5 10.5L13 7L16.5 3.5zM3.5 16.5L7 20L3.5 16.5L0 13L3.5 16.5zM16.5 16.5L20 20L16.5 16.5L13 13L16.5 16.5z"%3E%3C/path%3E%3C/svg%3E');
+    color: white;
+}
+
+footer input {
+    width: 5em;
+}
+
+.table {
+    --table-width: calc(min(80vw, 80vh));
+    --table-height: calc(min(80vh, 80vw));
+    width: var(--table-width);
+    height: var(--table-height);
+    position: relative;
+    margin: 20px auto;
+    background-color: #2E8B57;
+    background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill="%233CB371" fill-opacity="0.2" d="M10 0L12.5 5H7.5L10 0zM10 20L12.5 15H7.5L10 20zM0 10L5 12.5V7.5L0 10zM20 10L15 12.5V7.5L20 10zM3.5 3.5L7 7L3.5 10.5L0 7L3.5 3.5zM16.5 3.5L20 7L16.5 10.5L13 7L16.5 3.5zM3.5 16.5L7 20L3.5 16.5L0 13L3.5 16.5zM16.5 16.5L20 20L16.5 16.5L13 13L16.5 16.5z"%3E%3C/path%3E%3C/svg%3E');
+    border-radius: 50%;
+    border: calc(var(--table-width) / 80) solid darkred;
+    color: white;
+    font-size: calc(var(--table-height) / 32);
+}
+
+.player {
+    width: calc(var(--table-width) / 6.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translate(calc(var(--table-width) / 2.5 * cos(var(--i) * 36deg)), calc(var(--table-height) / 2.8 * sin(var(--i) * 36deg)));
+}
+
+.player-name, .player-cash {
+    text-align: center;
+}
+
+.player-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    font-size: calc(var(--table-height) / 30);
+}
+
+.card {
+    color: black;
+    width: calc(var(--table-width) / 15);
+    height: calc(var(--table-width) / 10);
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: .1em;
+}
+
+.player-bet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translate(calc(var(--table-width) / 3.6 * cos(var(--i) * 36deg)), calc(var(--table-height) / 4.8 * sin(var(--i) * 36deg)));
+    font-size: calc(var(--table-height) / 30);
+}
+
+.player-active {
+    background-color: #285c98;
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+.pot {
+    font-size: 2em;
+}

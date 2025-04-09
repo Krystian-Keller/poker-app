@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='icon' type='image/svg+xml' href='favicon.svg' />
+    <link rel='stylesheet' href='styles.css' />
+</head>
+
+<body>
+    <script type='module'>
+        import { html, render } from './lib/preact-htm-standalone.js'
+        import App from './app/app.js'
+        import Client from './app/client.js'
+        render(html`<${App} client=${new Client(fetch, EventSource)} />`, document.body)
+    </script>
+</body>
+
+</html>
