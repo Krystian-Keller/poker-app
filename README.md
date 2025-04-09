@@ -1,39 +1,69 @@
-# Poker application
+# ♠️ Poker Game - Texas Hold'em
 
-This is the reference application for the poker game that is being developed as part of the agile software engineering training.
+Este projeto foi desenvolvido como parte do treinamento **Agile Software Engineering (ASE)** da SAP. A aplicação simula um jogo de poker baseado nas regras do **Texas Hold'em**, com o objetivo de praticar conceitos modernos de desenvolvimento de software utilizando **Java**, **Spring Boot**, **TDD**, e metodologias ágeis.
 
-## Initial setup
-- This repository is supposed to be forked for your training so that you can share code changes among your training team
-- The code requires at least Java 8 and Maven 3 to compile and package
-- If you use Eclipse as an IDE, import the project as "Existing Maven project"
-- The project is a self-contained Spring Boot project
-- You can start the application either:
-	- using `mvn spring-boot:run`, from the command line or within your IDE
-	- if you are using [Spring Tool Suite](https://spring.io/tools): using "Run As" -> "Spring Boot App" or from the "Boot Dashboard" view
-- The application will be available at http://localhost:8080
-- If you would like to use Gradle instead of Maven:
-  - Use `gradle init` to generate Gradle artifacts from the Maven pom.xml
-  - Add `mavenCentral()` to the `repositories`
-  - [Add the Spring Boot plugin for Gradle](https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/), otherwise the `bootRun` Gradle task will not work
-  - Add the following to enable JUnit5: 
-    ```groovy
-    test {
-        useJUnitPlatform()
-    }
-    ```
-  - For PITest add the plugin `id 'info.solidsoft.pitest' version '1.5.1'` and the following to support JUnit 5 tests:
-    ```groovy
-    pitest {
-        junit5PluginVersion = '0.12'
-    }
-    ```
+---
 
-## Test support tools
-- To continuously execute your tests you can use [Infinitest](http://infinitest.github.io/) which has plugins for Eclipse and IntelliJ
-- To get code coverage statistics you can use:
-	- IntelliJ's built-in [code coverage runner](https://www.jetbrains.com/help/idea/code-coverage.html)
-	- [EclEmma](https://www.eclemma.org/) plugin for Eclipse
-- Mutation tests are available using the PIT maven plugin.
-	- Simply run `mvn org.pitest:pitest-maven:mutationCoverage` the report will be available at **target/pit-reports/{timestamp}/index.html**
-	- NOTE: If pitest reports any problems you can try to run `mvn install` and then retry.
- 
+## 🎓 Contexto Educacional
+
+Este repositório representa um ambiente de aprendizado colaborativo. Durante o bootcamp, trabalhamos em pares e em equipe, aplicando práticas como **pair programming**, **testes automatizados**, **mutação de testes**, e uso de **frameworks modernos** como Spring Boot. O código aqui desenvolvido é parte de um exercício prático para aplicar os conceitos aprendidos no treinamento.
+
+---
+
+## 🔧 Requisitos Técnicos
+
+- **Java 8+**  
+- **Maven 3+**
+- **IDE**: Recomendado usar IntelliJ, Eclipse ou Spring Tool Suite (STS)
+
+---
+
+## 🚀 Como rodar a aplicação
+
+Este projeto é uma aplicação **Spring Boot** auto-contida. Você pode executá-lo de diferentes formas:
+
+### ✅ Usando Maven (linha de comando ou IDE):
+```bash
+mvn spring-boot:run
+```
+
+### ✅ Usando Spring Tool Suite:
+- Clique com o botão direito no projeto → *Run As* → *Spring Boot App*  
+- Ou execute pela visualização do *Boot Dashboard*
+
+### 🌐 A aplicação estará disponível em:
+```
+http://localhost:8080
+```
+
+---
+
+## 🧪 Suporte a Testes
+
+Durante o bootcamp, enfatizamos **qualidade de código** com ferramentas de teste:
+
+### 🔁 Testes contínuos
+- [Infinitest](https://infinitest.github.io/) (plugins para Eclipse e IntelliJ)
+
+### 📊 Cobertura de código
+- IntelliJ: cobertura embutida
+- Eclipse: plugin [EclEmma](https://www.eclemma.org/)
+
+
+---
+
+## 👨‍💻 Aprendizados
+
+Este projeto reforçou:
+- Práticas de **desenvolvimento ágil**
+- Aplicação de **Clean Code**
+- Escrita e refatoração guiada por testes (**TDD**)
+- Colaboração com controle de versão via **Git/GitHub**
+- Estruturação de projetos em **Java + Spring Boot**
+
+---
+
+## 📬 Observações Finais
+
+- Este projeto foi desenvolvido exclusivamente para fins educacionais durante o ASE Bootcamp.
+- Toda a implementação reflete práticas modernas de engenharia de software exploradas durante o treinamento.
